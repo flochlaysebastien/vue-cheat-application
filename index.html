@@ -69,6 +69,18 @@
 
         <button @click="toggleName">Show Name: {{ showName }}</button>
         <button @click="toggleAge">Show Age: {{ showAge }}</button>
+
+        <hr>
+
+        <ul>
+            <li v-for="item in items">{{ item }}</li>
+        </ul>
+        <ul v-for="(combatant, index) in combatants">
+            <li>{{ index }} - {{ combatant.name }}</li>
+            <li>age: {{ combatant.age }}</li>
+            <li>belt colour: {{ combatant.belt }}</li>
+        </ul>
+    </div>
     </div>
 
     <script src="app.js"></script>
