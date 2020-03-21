@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <NesteedComponent />
-    <PlayersComponent :players='playerList' />
+    <PlayersComponent :players='playerList' @offline='offlinePlayer' />
     <OnlinePlayers :players='playerList' />
   </div>
 </template>
@@ -29,6 +29,15 @@ export default {
         { name: 'Tyrion', online: false },
         { name: 'Aria', online: true },
       ]
+    }
+  },
+  methods: {
+    offlinePlayer(payload){
+      console.log(payload)
+      this.playerList = this.playerList.filter(player => {
+        return player.name !== payload.name
+      })
+      console.log(this.playerList)
     }
   },
 }

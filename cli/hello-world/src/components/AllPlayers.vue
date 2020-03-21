@@ -2,7 +2,7 @@
   <div id="all-players">
     <h2>All Players</h2>
     <div v-for="(player, index) in players" :key="index">
-      <span>{{ player.name }}</span>
+      <span @click="offlinePlayer(player.name)">{{ player.name }}</span>
     </div>
   </div>
 </template>
@@ -16,7 +16,12 @@ export default {
     return {
       
     }
-  }
+  },
+  methods: {
+      offlinePlayer(name){
+          this.$emit('offline', { name })
+      }
+  },
 }
 </script>
 
