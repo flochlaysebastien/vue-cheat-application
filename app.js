@@ -9,7 +9,8 @@ new Vue({
         coords: {
             x: 0,
             y: 0
-        }
+        },
+        name: 'Sebastien'
     },
     methods: {
         hello(who) {
@@ -27,6 +28,10 @@ new Vue({
         logCoords(e) {
             this.coords.x = e.offsetX
             this.coords.y = e.offsetY
+        },
+        updateName(e) {
+            // console.log(e.target.value)
+            this.name = e.target.value
         }
     }
 })
