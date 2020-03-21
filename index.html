@@ -61,6 +61,14 @@
         <button type="text" @click.alt="logEvent">Alt-click me</button>
         <button type="text" @click.shift="logEvent">Shift-click me</button>
         <a href="http://www.google.com" @click.prevent="logEvent">Google</a>
+
+        <hr>
+
+        <p v-if="showName">Mario</p>
+        <p v-else-if="showAge">25</p>
+
+        <button @click="toggleName">Show Name: {{ showName }}</button>
+        <button @click="toggleAge">Show Age: {{ showAge }}</button>
     </div>
 
     <script src="app.js"></script>

@@ -10,7 +10,9 @@ new Vue({
             x: 0,
             y: 0
         },
-        name: 'Sebastien'
+        name: 'Sebastien',
+        showName: true,
+        showAge: true
     },
     methods: {
         hello(who) {
@@ -32,6 +34,11 @@ new Vue({
         updateName(e) {
             // console.log(e.target.value)
             this.name = e.target.value
+        }, toggleName() {
+            this.showName = !this.showName
+        },
+        toggleAge() {
+            this.showAge = !this.showAge
         }
     }
 })
