@@ -55,6 +55,12 @@
 
         <p>My name is {{ name }}</p>
         <input type="text" v-model="name" />
+
+        <hr>
+
+        <button type="text" @click.alt="logEvent">Alt-click me</button>
+        <button type="text" @click.shift="logEvent">Shift-click me</button>
+        <a href="http://www.google.com" @click.prevent="logEvent">Google</a>
     </div>
 
     <script src="app.js"></script>
