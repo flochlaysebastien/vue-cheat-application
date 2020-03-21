@@ -5,6 +5,7 @@
     <NesteedComponent />
     <PlayersComponent :players='playerList' @offline='offlinePlayer' />
     <OnlinePlayers :players='playerList' />
+    <Blogs />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import NesteedComponent from './components/NesteedComponent.vue'
 import AllPlayers from './components/AllPlayers.vue'
 import OnlinePlayers from './components/OnlinePlayers.vue'
+import Blogs from './components/Blogs.vue'
 
 export default {
   name: 'App',
@@ -20,7 +22,8 @@ export default {
     HelloWorld,
     NesteedComponent,
     PlayersComponent: AllPlayers,
-    OnlinePlayers
+    OnlinePlayers,
+    Blogs
   },
   data() {
     return {

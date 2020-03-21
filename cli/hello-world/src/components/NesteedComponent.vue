@@ -24,15 +24,15 @@ export default {
     }
   },
   beforeCreate(){
-    alert('beforeCreate hook')
+    // alert('beforeCreate hook')
     console.log('beforeCreate hook')
   },
   created(){
-    alert('created hook')
+    // alert('created hook')
     console.log('created hook')
   },
   beforeUpdate(){
-    alert('beforeUpdate hook')
+    // alert('beforeUpdate hook')
     console.log('beforeUpdate hook')
   }
 }
