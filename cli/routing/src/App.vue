@@ -13,6 +13,11 @@
         </router-link>
       </li>
     </div>
+    <ul>
+      <li><button @click="goBack">Go Back</button></li>
+      <li><button @click="goHome">Redirect to Home</button></li>
+      <li><button @click="goForward">Go Forward</button></li>
+    </ul>
     <router-view />
   </div>
 </template>
@@ -23,6 +28,17 @@ export default {
   data () {
     return {
       userIds: ['Jon', 'Tyrion', 'Aria', 'Baelish']
+    }
+  },
+  methods: {
+    goHome () {
+      this.$router.push({ name: 'Home' })
+    },
+    goBack () {
+      this.$router.go(-1)
+    },
+    goForward () {
+      this.$router.go(1)
     }
   }
 }
@@ -46,7 +62,16 @@ export default {
   color: #2c3e50;
 }
 
+#nav a.router-link-active {
+  color: purple;
+}
+
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
 }
 </style>
