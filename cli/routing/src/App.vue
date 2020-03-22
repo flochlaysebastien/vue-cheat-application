@@ -1,14 +1,32 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/profile/Baelish">Profile</router-link> |
+      <router-link to="/">Home</router-link>|
+      <router-link to="/about">About</router-link>|
+      <router-link to="/profile">Profile</router-link>|
       <router-link :to="{ name: 'About' }">About Dynamic</router-link>
     </div>
-    <router-view/>
+    <div id="nav">
+      <li v-for="(id, index) in userIds" :key="index">
+        <router-link :to="{ name: 'ViewProfile', params: { user_id: id }}">
+          <span>{{ id }} Profile</span>
+        </router-link>
+      </li>
+    </div>
+    <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  data () {
+    return {
+      userIds: ['Jon', 'Tyrion', 'Aria', 'Baelish']
+    }
+  }
+}
+</script>
 
 <style>
 #app {
