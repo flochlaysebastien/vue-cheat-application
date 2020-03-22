@@ -3,6 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
+      <router-link to="/profile/Baelish">Profile</router-link> |
       <router-link :to="{ name: 'About' }">About Dynamic</router-link>
     </div>
     <router-view/>
